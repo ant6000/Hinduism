@@ -11,7 +11,8 @@ final String name;
         color: Colors.amber,
         borderRadius: BorderRadius.all(Radius.circular(10))
       ),
-      child: Center(child: Text(name,style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)),
+      child: Center(child: Text(name,
+      style: const TextStyle(fontSize: 24,fontFamily: 'NotoSansBengali',fontWeight: FontWeight.w900),)),
     );
   }
 }

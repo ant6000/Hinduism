@@ -41,12 +41,12 @@ class LoginPage extends StatelessWidget {
                   onTap: () {
 
                   },
-                  child: Text('Create Account',style: TextStyle(color: Colors.green)),
+                  child: const Text('Create Account',style: TextStyle(color: Colors.green)),
                 ),InkWell(
                   onTap: () {
 
                   },
-                  child: Text('Forgot Password?',style: TextStyle(color: Colors.red),),
+                  child: const Text('Forgot Password?',style: TextStyle(color: Colors.red),),
                 ),
               ],
             ),

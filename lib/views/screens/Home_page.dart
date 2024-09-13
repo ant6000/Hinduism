@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 5,
             crossAxisSpacing: 5,
-              childAspectRatio: 1.5
+            mainAxisExtent: 100,
           ),
           itemBuilder: (context, index) {
             return FeatureCard(name: features[index]);

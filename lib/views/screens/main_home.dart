@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //FeaturesServices.getFeatureList();
     return Scaffold(
       body: SafeArea(
         child: pages[selectedIndex],

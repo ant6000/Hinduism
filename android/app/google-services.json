@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "69370668855",
+    "project_id": "hinduism-f8826",
+    "storage_bucket": "hinduism-f8826.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69370668855:android:6e8264d1dfda1cf7371cb2",
+        "android_client_info": {
+          "package_name": "com.example.hinduism"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiybJjDpHXwgY3barmNurycSEHWVPXUDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
