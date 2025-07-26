@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hinduism/views/widgets/feature_card.dart';
-import 'package:hinduism/views/widgets/today_card.dart';
-import 'package:hinduism/views/widgets/top_banner.dart';
+import 'package:hinduism/presentation/widgets/feature_card.dart';
+import 'package:hinduism/presentation/widgets/today_card.dart';
+import 'package:hinduism/presentation/widgets/top_banner.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

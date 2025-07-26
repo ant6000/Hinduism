@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hinduism/data/model/feature_model.dart';
+import 'package:hinduism/data/models/feature_model.dart';
 
 class FeaturesServices{
   static final FirebaseFirestore _database = FirebaseFirestore.instance;

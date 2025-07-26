@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hinduism/views/screens/Home_page.dart';
-import 'package:hinduism/views/screens/community_page.dart';
-import 'package:hinduism/views/screens/notification_page.dart';
-import 'package:hinduism/views/screens/settings_page.dart';
+import 'package:hinduism/presentation/screens/Home_page.dart';
+import 'package:hinduism/presentation/screens/community_page.dart';
+import 'package:hinduism/presentation/screens/notification_page.dart';
+import 'package:hinduism/presentation/screens/settings_page.dart';
 
 
 class HomeScreen extends StatefulWidget {
