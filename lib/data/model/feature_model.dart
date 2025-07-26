@@ -1,4 +1,5 @@
-import 'package:firebase_cloud_firestore/firebase_cloud_firestore.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FeatureModel{
   String? en;

@@ -9,6 +9,7 @@ class TopBanner extends StatelessWidget {
     ..loadRequest(
         Uri.parse('https://www.prokerala.com/calendar/bengalicalendar.html'))
     ..runJavaScriptReturningResult('document.querySelector("#calendar")')
+    ..loadHtmlString("#calendar")
     ..setNavigationDelegate(NavigationDelegate(
       onPageFinished: (url) {},
     ));

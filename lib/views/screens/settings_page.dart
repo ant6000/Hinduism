@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:hinduism/controller/settings_controller.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
-  static final settingsController = Get.put(SettingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -78,16 +75,7 @@ class SettingsPage extends StatelessWidget {
         ListTile(
             leading: const Icon(Icons.dark_mode),
             title: Text('Theme', style: TextStyle(fontSize: 18.sp)),
-            trailing:  
-               Obx(() => 
-                  Switch(
-                  value:settingsController.isDarkMode.value,
-                  onChanged: (value) {
-                    settingsController.changeTheme(value);
-                  },
-                  activeColor: Colors.blue,
-                               ),
-               ),
+             
             ),
         const Divider(thickness: 1, indent: 50, endIndent: 30),
         ListTile(
