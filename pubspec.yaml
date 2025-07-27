@@ -30,19 +30,19 @@ dependencies:
   #http client
   dio: ^5.8.0+1
   #http client generation
-  # retrofit: ^4.6.0
-  #json serialization
-  # freezed: ^3.2.0
-  # freezed_annotation: ^3.1.0
-  # json_annotation: ^4.9.0
+  retrofit: ^4.6.0
+  #json de/serialization
+  freezed_annotation: 
+  json_annotation: 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  build_runner: ^2.6.0
-  # retrofit_generator: ^10.0.0
-  # json_serializable: ^6.9.5
+  build_runner: ^2.5.4
+  freezed: ^3.1.0
+  retrofit_generator: 
+  json_serializable: 
 
 flutter_gen:
   integrations:
