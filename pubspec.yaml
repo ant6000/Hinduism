@@ -4,7 +4,8 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
@@ -24,24 +25,24 @@ dependencies:
   #fonts
   google_fonts: ^6.2.1
   #webview
-  webview_flutter: ^4.13.0
+  # webview_flutter: ^4.13.0
   cupertino_icons: ^1.0.6
   #http client
   dio: ^5.8.0+1
   #http client generation
-  retrofit: ^4.6.0
+  # retrofit: ^4.6.0
   #json serialization
-  freezed: ^3.2.0
-  freezed_annotation: ^3.1.0
-  json_annotation: ^4.9.0
+  # freezed: ^3.2.0
+  # freezed_annotation: ^3.1.0
+  # json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
   build_runner: ^2.6.0
-  retrofit_generator: ^10.0.0
-  json_serializable: ^6.9.5
+  # retrofit_generator: ^10.0.0
+  # json_serializable: ^6.9.5
 
 flutter_gen:
   integrations:
