@@ -53,7 +53,7 @@ flutter:
   fonts:
     - family: Shamim Cholontika
       fonts:
-        - asset: lib/assets/fonts/Shamim Cholontika/LiShamimCholontikaANSIV1-Regular.ttf
+        - asset: lib/core/assets/fonts/Shamim Cholontika/LiShamimCholontikaANSIV1-Regular.ttf
     - family: NotoSansBengali
       fonts:
-        - asset: lib/assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf
+        - asset: lib/core/assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf
