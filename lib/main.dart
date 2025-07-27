@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hinduism/core/utils/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:hinduism/presentation/screens/login_page.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             initialRoute: '/',
+            routes: {
+              '/':(context)=> LoginPage(),
+            },
           );
         });
   }
