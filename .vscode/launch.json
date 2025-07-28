@@ -5,21 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "debug",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "profile",
+            "name": "Dev",
+            "cwd": ".",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "debug",
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor", "dev"],
         },
         {
-            "name": "release",
+            "name": "Pre",
+            "cwd": ".",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "debug",
+            "program": "lib/main_pre.dart",
+            "args": ["--flavor", "pre"],
+        },
+        {
+            "name": "Pro",
+            "cwd": ".",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main_pro.dart",
+            "args": ["--flavor", "pro"],
         }
     ]
 }

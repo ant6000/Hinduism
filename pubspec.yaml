@@ -34,6 +34,10 @@ dependencies:
   #json de/serialization
   freezed_annotation: 
   json_annotation: 
+  #app flavor
+  flutter_flavor: ^3.1.4
+  #routing
+  go_router: ^16.0.0
 
 dev_dependencies:
   flutter_test:
@@ -54,7 +58,7 @@ flutter:
   fonts:
     - family: Shamim Cholontika
       fonts:
-        - asset: lib/core/assets/fonts/Shamim Cholontika/LiShamimCholontikaANSIV1-Regular.ttf
+        - asset: assets/fonts/Shamim Cholontika/LiShamimCholontikaANSIV1-Regular.ttf
     - family: NotoSansBengali
       fonts:
-        - asset: lib/core/assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf
+        - asset: assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf
