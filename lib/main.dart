@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hinduism/core/routes/app_router.dart';
 import 'package:hinduism/core/utils/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:hinduism/presentation/screens/login_page.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
             themeMode: ThemeMode.light,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
+            routerConfig: appRouter,
           );
         });
   }

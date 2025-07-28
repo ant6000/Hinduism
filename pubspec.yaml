@@ -34,8 +34,6 @@ dependencies:
   #json de/serialization
   freezed_annotation: 
   json_annotation: 
-  #app flavor
-  flutter_flavor: ^3.1.4
   #routing
   go_router: ^16.0.0
 
