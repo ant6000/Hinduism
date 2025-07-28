@@ -1,36 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hinduism/core/routes/app_router.dart';
-import 'package:hinduism/core/utils/app_theme.dart';
+import 'package:hinduism/app.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:flutter_flavor/flutter_flavor.dart';
+import 'package:hinduism/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FlavorConfig(
+      name: "PROD",
+      color: Colors.red,
+      location: BannerLocation.topStart,
+      variables: {
+        "baseUrl": "https://www.example.com.dev",
+      });
   runApp(const MyApp());
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: const Size(360, 690),
-        minTextAdapt: true,
-        builder: (context, _) {
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            themeMode: ThemeMode.light,
-            theme: AppTheme.lightTheme,
-            darkTheme: AppTheme.darkTheme,
-            routerConfig: appRouter,
-          );
-        });
-  }
-}
-//https://medium.com/@ngounlyborey/test-my-own-articles-fb4d83a24e71

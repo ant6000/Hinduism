@@ -55,25 +55,25 @@ android {
         }
     }
 
-    flavorDimensions "app"
+    // flavorDimensions "app"
 
-    productFlavors {
-        dev {
-            dimension "app"
-            applicationIdSuffix ".dev"
-            versionNameSuffix "-dev"
-            manifestPlaceholders = [appName: "[DEV] {app_name}"]
-        }
-        stage {
-            dimension "app"
-            applicationIdSuffix ".stage"
-            versionNameSuffix "-stage"
-            manifestPlaceholders = [appName: "[STG] {app_name}"]
-        }
-        prod {
-            dimension "app"
-        }
-    }
+    // productFlavors {
+    //     dev {
+    //         dimension "app"
+    //         applicationIdSuffix ".dev"
+    //         versionNameSuffix "-dev"
+    //         manifestPlaceholders = [appName: "[DEV] {app_name}"]
+    //     }
+    //     stage {
+    //         dimension "app"
+    //         applicationIdSuffix ".stage"
+    //         versionNameSuffix "-stage"
+    //         manifestPlaceholders = [appName: "[STG] {app_name}"]
+    //     }
+    //     prod {
+    //         dimension "app"
+    //     }
+    // }
 }
 
 flutter {

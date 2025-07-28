@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flavor/flutter_flavor.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -89,6 +90,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     fillColor: Colors.blue,
                     filled: true)),
+            Text(FlavorConfig.instance.variables["baseUrl"],style: const TextStyle(fontSize: 15),),
           ],
         ),
       ),

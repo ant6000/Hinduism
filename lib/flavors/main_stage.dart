@@ -1,9 +1,21 @@
-import 'package:hinduism/flavors/flavor_config.dart';
-import 'package:hinduism/flavors/main_common.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hinduism/app.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_flavor/flutter_flavor.dart';
+import 'package:hinduism/firebase_options.dart';
 
-void main() {
-  mainCommon(
-      flavor: Flavor.prod,
-      baseUrl: "https://thecoder-stage.com/api/v1/",
-      name: "The Coder Stage Flavor");
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FlavorConfig(
+      name: "PROD",
+      color: Colors.red,
+      location: BannerLocation.topStart,
+      variables: {
+        "baseUrl": "https://www.example.com.stage",
+      });
+  runApp(const MyApp());
 }
