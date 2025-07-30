@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hinduism/core/routes/app_routes.dart';
 import 'package:hinduism/core/routes/navigation_helper.dart';
 import 'package:hinduism/presentation/screens/login_page.dart';
+import 'package:hinduism/presentation/screens/user_list_screen.dart';
 
 abstract class _Path {
   static const String onboarding = '/onboarding';
@@ -22,7 +23,7 @@ abstract class PathParameter {
 
 GoRouter appRouter = GoRouter(
   navigatorKey: NavigationHelper().parentNavigatorKey,
-  initialLocation: _Path.onboarding,
+  initialLocation: _Path.home,
   observers: [RouteNavigatorObserver()],
   routes: <RouteBase>[
     GoRoute(
@@ -30,11 +31,11 @@ GoRouter appRouter = GoRouter(
       name: AppRoutes.onboarding,
       builder: (context, state) =>  LoginPage(),
     ),
-    // GoRoute(
-    //   path: _Path.error,
-    //   name: AppRoutes.error,
-    //   builder: (context, state) => const ErrorScreen(),
-    // ),
+    GoRoute(
+      path: _Path.home,
+      name: AppRoutes.home,
+      builder: (context, state) => const UserListScreen(),
+    ),
   ],
   // errorPageBuilder: (context, state) {
   //   return MaterialPage<void>(

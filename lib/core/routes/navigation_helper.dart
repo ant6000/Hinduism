@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class NavigationHelper {
@@ -32,6 +34,6 @@ class RouteNavigatorObserver extends NavigatorObserver {
 
   void _logRoute(Route<dynamic> route, String action) {
     final String? routeName = route.settings.name;
-    // Log.info('$action route: ${routeName ?? 'unknown'}');
+    log('$action route: ${routeName ?? 'unknown'}');
   }
 }
