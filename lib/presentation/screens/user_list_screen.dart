@@ -35,132 +35,71 @@ class _UserListScreenState extends ConsumerState<UserListScreen> {
     await ref.read(userListProvider.notifier).loadUsers(isRefresh: true);
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   final userListState = ref.watch(userListProvider);
-
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       title: const Text('Users'),
-  //       bottom: PreferredSize(
-  //         preferredSize: const Size.fromHeight(60),
-  //         child: Padding(
-  //           padding: const EdgeInsets.all(8.0),
-  //           child: TextField(
-  //             controller: _searchController,
-  //             decoration: InputDecoration(
-  //               hintText: 'Search users...',
-  //               prefixIcon: const Icon(Icons.search),
-  //               suffixIcon: _searchController.text.isNotEmpty
-  //                   ? IconButton(
-  //                       icon: const Icon(Icons.clear),
-  //                       onPressed: () {
-  //                         _searchController.clear();
-  //                       },
-  //                     )
-  //                   : null,
-  //               border: OutlineInputBorder(
-  //                 borderRadius: BorderRadius.circular(10),
-  //               ),
-  //             ),
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //     body: Column(
-  //       children: [
-  //         if (userListState.isOffline)
-  //           Container(
-  //             width: double.infinity,
-  //             padding: const EdgeInsets.all(8),
-  //             color: Colors.orange[100],
-  //             child: const Row(
-  //               children: [
-  //                 Icon(Icons.wifi_off, color: Colors.orange),
-  //                 SizedBox(width: 8),
-  //                 Text(
-  //                   'Offline mode - Showing cached data',
-  //                   style: TextStyle(color: Colors.orange),
-  //                 ),
-  //               ],
-  //             ),
-  //           ),
-  //         Expanded(
-  //           child: RefreshIndicator(
-  //             onRefresh: _onRefresh,
-  //             child: _buildBody(userListState),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
   @override
-Widget build(BuildContext context) {
-  final userListState = ref.watch(userListProvider);
-  
-  // Handle null case
-  if (userListState == null) {
-    return const Center(child: CircularProgressIndicator());
-  }
+  Widget build(BuildContext context) {
+    final userListState = ref.watch(userListProvider);
 
-  return Scaffold(
-    appBar: AppBar(
-      title: const Text('Users'),
-      bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(60),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: _searchController,
-            decoration: InputDecoration(
-              hintText: 'Search users...',
-              prefixIcon: const Icon(Icons.search),
-              suffixIcon: _searchController.text.isNotEmpty
-                  ? IconButton(
-                      icon: const Icon(Icons.clear),
-                      onPressed: () {
-                        _searchController.clear();
-                      },
-                    )
-                  : null,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
+    // Handle null case
+    if (userListState == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Users'),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _searchController,
+              decoration: InputDecoration(
+                hintText: 'Search users...',
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: _searchController.text.isNotEmpty
+                    ? IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: () {
+                          _searchController.clear();
+                        },
+                      )
+                    : null,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
             ),
           ),
         ),
       ),
-    ),
-    body: Column(
-      children: [
-        if (userListState.isOffline)
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(8),
-            color: Colors.orange[100],
-            child: Row(
-              children: [
-                Icon(Icons.wifi_off, color: Colors.orange[400]),
-                const SizedBox(width: 8),
-                Text(
-                  'Offline mode - Showing cached data',
-                  style: TextStyle(color: Colors.orange[400]),
-                ),
-              ],
+      body: Column(
+        children: [
+          if (userListState.isOffline)
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(8),
+              color: Colors.orange[100],
+              child: Row(
+                children: [
+                  Icon(Icons.wifi_off, color: Colors.orange[400]),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Offline mode - Showing cached data',
+                    style: TextStyle(color: Colors.orange[400]),
+                  ),
+                ],
+              ),
+            ),
+          Expanded(
+            child: RefreshIndicator(
+              onRefresh: _onRefresh,
+              child: _buildBody(userListState),
             ),
           ),
-        Expanded(
-          child: RefreshIndicator(
-            onRefresh: _onRefresh,
-            child: _buildBody(userListState),
-          ),
-        ),
-      ],
-    ),
-  );
-}
+        ],
+      ),
+    );
+  }
 
   Widget _buildBody(UserListState state) {
     if (state.isLoading && state.users.isEmpty) {
