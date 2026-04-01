@@ -1,2 +1,0 @@
-/home/antor/antor/Hinduism/android/app/.cxx/Debug/155ym595/x86_64/CMakeFiles/rebuild_cache.dir
-/home/antor/antor/Hinduism/android/app/.cxx/Debug/155ym595/x86_64/CMakeFiles/edit_cache.dir

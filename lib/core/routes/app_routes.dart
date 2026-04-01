@@ -2,7 +2,7 @@ abstract class AppRoutes {
   AppRoutes._();
 
   static const String onboarding = 'onboarding';
-  static const String setLanguage = 'setLanguage';
+  static const String login = '/login';
   static const String appBaseScreen = 'bottomNavBar';
   static const String home = 'home';
   static const String travelling = 'travelling';
