@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -74,7 +73,7 @@ class SettingsPage extends StatelessWidget {
         //const Divider(thickness: 1,indent: 50,endIndent: 30),
         ListTile(
             leading: const Icon(Icons.dark_mode),
-            title: Text('Theme', style: TextStyle(fontSize: 18.sp)),
+            title: Text('Theme', style: TextStyle(fontSize: 18)),
              
             ),
         const Divider(thickness: 1, indent: 50, endIndent: 30),

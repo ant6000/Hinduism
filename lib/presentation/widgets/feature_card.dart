@@ -12,7 +12,7 @@ final String name;
         borderRadius: BorderRadius.all(Radius.circular(10))
       ),
       child: Center(child: Text(name,
-      style: const TextStyle(fontSize: 24,fontFamily: 'NotoSansBengali',fontWeight: FontWeight.w900),)),
+      style: const TextStyle(fontSize: 24,fontFamily: 'NotoSansBengali',fontWeight: FontWeight.w900,color: Colors.amber),)),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hinduism/app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_flavor/flutter_flavor.dart';
@@ -7,15 +7,16 @@ import 'package:hinduism/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   FlavorConfig(
       name: "DEVELOP",
       color: Colors.red,
       location: BannerLocation.topStart,
       variables: {
-        "baseUrl": "https://www.example.com.dev",
+        "baseUrl": "https://track.itracker.com.bd/api/v2",
       });
-  runApp(const MyApp());
+
+  runApp(ProviderScope(child: const MyApp()));
 }

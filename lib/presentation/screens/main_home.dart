@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   int selectedIndex = 0;
 
-  onPageChanged(int index) {
+  void onPageChanged(int index) {
     setState(() {
       selectedIndex = index;
     });

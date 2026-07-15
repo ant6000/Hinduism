@@ -1,0 +1,276 @@
+# Extension Info
+# Name: REST Client
+# Id: humao.rest-client
+# Publisher: Huachao Mao
+
+@hostName =  https://track.itracker.com.bd/api/v2
+# @hostName =  https://v3t.itracker.com.bd/api/v2
+# @hostName =  http://192.168.103.52:8000/api/v2
+@token = 8d86da5f-9c2a-4bdc-ad83-64aa1999a16c
+@fcmToken = cNIle4dvk0I0piwImPzcvk:APA91bFKBg-XIpD76LWkrnZLt8QlL7TvZbW1NLCrVmE12ku-Zyxvy2j2DiSswDETrK6OD5WrG-UVYJSqGPozsTbkuiBO-H121qi-dIjub7gS5jrYBZn6mhc
+@vtsId = 30110
+
+###1 Login
+POST {{hostName}}/login
+Content-Type: application/json
+Accept: application/json
+
+{   
+    // "username": "IFADL601176",
+    // "password": "11111111"
+    "username": "pranta",
+    "password": "pranta123"
+}
+
+### Biometric Registration
+POST {{hostName}}/biometric-register
+Content-Type: application/json
+Accept: application/json
+
+{   
+    "username": "impl",
+    "password": "impl123",
+    "device_id": "1234567"
+}
+
+### Biometric Login
+POST {{hostName}}/biometric-login
+Content-Type: application/json
+Accept: application/json
+
+{   
+    "username": "impl",
+    "token": "ClzfR01TvrXKumJUy2FJ7N9MbQ26p1hIXcuk8BFhZVLm8q1xLy52HSuwCijSseu4",
+    "device_id": "1234567"
+}
+
+###2 Logout
+POST {{hostName}}/logout
+Content-Type: application/json
+Accept: application/json
+
+{   
+    "token": "{{token}}"
+}
+
+###1 Send OTP
+POST {{hostName}}/reset-password/send-otp
+Content-Type: application/json
+Accept: application/json
+
+{   
+    "username": "itrackertest"
+}
+
+###1 Verify OTP
+POST {{hostName}}/reset-password/verify-otp
+Content-Type: application/json
+Accept: application/json
+
+{   
+    "username": "itrackertest",
+     "otp" : "7300"
+}
+
+###3 Register FCM Token to server
+POST {{hostName}}/register-fcm-token
+Content-Type: application/json
+Accept: application/json
+
+{   
+    "token": "{{token}}",
+    "fcm_token": "{{fcmToken}}",
+    "device_name": "",
+    "os_version": ""
+}
+
+###4 User profile
+GET {{hostName}}/user-profile
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###5 Update user info
+PUT {{hostName}}/user-profile
+Content-Type: multipart/form-data;
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+    "email":"test@gmail.com"
+}
+
+###6 Multi Vehicle live Data
+GET {{hostName}}/dashboard?token={{token}}
+
+###7 Single Vehicle live Data
+GET {{hostName}}/dashboard/{{vtsId}}?token={{token}}
+
+###8 All Vehicles list
+GET {{hostName}}/vehicles?token={{token}}
+
+### All GeoFence 
+GET {{hostName}}/geofence-list?token={{token}}
+
+### GeoFence Details
+GET {{hostName}}/geofence-details/{{{vtsId}}}?token={{token}}
+
+###9 All Notifications 
+GET {{hostName}}/notifications?token={{token}}&page=1&chunk=30
+
+###10 fetch all Notification settings
+GET {{hostName}}/notification-settings?token={{token}}
+
+###11 Expense Edit
+PUT {{hostName}}/expense-edit/350
+
+{   
+    "token": "{{token}}", 
+    "reg_num": "DM -MA-14-1386", 
+    "date_of_expense": "2025-12-10", 
+    "remarks": "Fuel updated & maintenance added", 
+    "expenses": [
+        { "expense_type": "tyre_repair", "amount": 10 },
+        {  "expense_type": "fuel", "amount": 20 },
+        { "expense_type": "glass-repair", "amount": 30 },
+        { "expense_type": "maintenance", "amount": 40 }
+    ]
+}
+
+###12 DBA
+GET {{hostName}}/driving-behavior-score?token={{token}}?vts_id={{vtsId}}?date_range=last_7_days
+
+###13 Trip share Trip URL list
+GET {{hostName}}/vms/track-share
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###14 Trip share Trip URL Create
+POST {{hostName}}/vms/track-share
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+    "vts_id" : 19465,
+    "time_from" : "09:00",
+    "time_to" : "18:00",
+    "expiry" : "3600", 
+}
+
+###15 Reports
+GET https://v3t.itracker.com.bd/api/v2/vehicle-tabular-data/30110?type=fuel&token=4638efbf-39ce-4faa-bb06-bf278d10ecee&period_from=2026-02-23+00%3A00%3A00&period_to=2026-03-01+23%3A59%3A59
+
+######################### Banglalink SMS API ###############
+
+### Token Gen
+POST https://corpsms.banglalink.net/bl/getAuthToken
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "IITL",
+    "password": "Shakib@2025"
+}
+
+
+### Read Inbox
+POST https://corpsms.banglalink.net/bl/inboxAPI
+Content-Type: application/json
+Accept: application/json
+
+{
+    "token": "Bearer eArcwzxe2iZKKEVwTydi6xtrT2wjAqaXq3JLLHE1hXY",
+    "startId": "1",
+    "bill_msisdn": "",
+    "udh_hex": "",
+    "date_range": "03/04/2026-04/04/2026",
+    "aparty_msisdn": "",
+    "page_index": "1",
+    "company_id": ""
+}
+
+### SEND SMS
+POST https://corpsms.banglalink.net/bl/api/v1/smsapigw/
+Content-Type: application/json
+Accept: application/json
+
+{   
+    "username": "IITL",
+    "password": "Shakib@2025",
+    "apicode": "5",
+    "msisdn": [
+    "01595508522"
+    ],
+    "countrycode": "880",
+    "cli": "01980222244",
+    "messagetype": "1",
+    "message": "RELAY,500#",
+    "clienttransid": "111dsd4545133",
+    "bill_msisdn": "8801980222244",
+    "tran_type": "T",
+    "request_type": "S",
+    "rn_code": "91"
+}
+
+### SMS Delivery Report
+POST https://corpsms.banglalink.net/bl/ecmapigw/webresources/ecmapigw.v3
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "IITL",
+    "password": "Shakib@2025",
+    "apicode": "4",
+    "msisdn": [
+    "01863837230"
+    ],
+    "countrycode": "880",
+    "cli": "01980222244",
+    "messagetype": "1",
+    "clienttransid": "11111adfg143533",
+    "operatortransid": "BL 20260107142608-01929024313-11111adfg143533-2070126408"
+}
+
+### invoice list/pdf
+GET http://192.168.103.52:9000/api/v2/invoices?account_id=1&billing_month=2026-06&page=1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### invoice items details
+GET http://192.168.103.52:9000/api/v2/invoices/1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### payment list
+GET http://192.168.103.52:9000/api/v2/payments?account_id=1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### payment initiate
+POST http://192.168.103.52:9000/api/v2/payments/initiate
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+    "invoice_id": 1,
+    "gateway": "bkash",
+    "amount": 50.00
+}
+
+### payment initiate
+POST http://192.168.103.52:9000/api/v2/payments/checkout-url
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer c0da68a4-19c7-48a1-8277-ec78fce95fec
+
+{
+    "invoice_id": 1
+}
